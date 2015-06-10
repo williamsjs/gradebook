@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+  before_action :logged_in?
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
   # GET /teachers
@@ -71,4 +72,10 @@ class TeachersController < ApplicationController
     def teacher_params
       params.require(:teacher).permit(:name, :email, :password)
     end
+
+    def logged_in?
+      unless Teacher.find_by_id(session[:teacher_id])
+      redirect_to sessions_login_path, notice: 'You must login before accessing this page.'
+    end
+  end
 end
