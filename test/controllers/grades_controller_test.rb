@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class GradesControllerTest < ActionController::TestCase
+
   setup do
     @grade = grades(:one)
   end
