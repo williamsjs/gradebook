@@ -2,10 +2,13 @@
 
 one:
   name: MyString
-  email: 
+  email: MyString
   teacher_id: 1
+  password_digest: blah
+
 
 two:
   name: MyString
-  email: 
+  email: MyString
   teacher_id: 1
+  password_digest: blah

@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @student = Student.find_by_id(session[:student_id])
   end
 
   # GET /students/1
@@ -78,5 +78,5 @@ class StudentsController < ApplicationController
         redirect_to sessions_login_path, notice: 'You must login before accessing this page.'
       end
     end
-  
+
 end

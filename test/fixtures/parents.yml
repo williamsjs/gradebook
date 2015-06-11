@@ -4,12 +4,12 @@ one:
   name: MyString
   email: MyString
   student_id: 1
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create(“iamteacher”) %>
   string: MyString
 
 two:
   name: MyString
   email: MyString
   student_id: 1
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create(“iamteacher”) %>
   string: MyString

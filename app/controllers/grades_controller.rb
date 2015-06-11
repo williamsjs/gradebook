@@ -25,7 +25,6 @@ class GradesController < ApplicationController
   # POST /grades.json
   def create
     @grade = Grade.new(grade_params)
-
     respond_to do |format|
       if @grade.save
         format.html { redirect_to @grade, notice: 'Grade was successfully created.' }
