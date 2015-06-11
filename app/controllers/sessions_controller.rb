@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         session[type_id.to_sym] = user.id
         redirect_to get_path(type), notice: "Login complete"
       else
-        flash[:notice] = "Invalid email or password"
+        flash.now[:notice] = "Invalid email or password"
       end
     end
   end

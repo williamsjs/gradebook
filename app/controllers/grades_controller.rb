@@ -4,7 +4,7 @@ class GradesController < ApplicationController
   # GET /grades
   # GET /grades.json
   def index
-    @grades = Student.find(session[:student_id]).grades
+    @grades = Grade.all
   end
 
   # GET /grades/1
