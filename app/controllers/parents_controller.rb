@@ -74,8 +74,10 @@ class ParentsController < ApplicationController
     end
 
     def logged_in?
-      unless Student.find_by_id(session[:student_id]) || Teacher.find_by_id(session[:teacher_id]) || Parent.find_by_id(session[:parent_id])
-      redirect_to sessions_login_path, notice: 'You must login before accessing this page.'
+      if Parent.find_by_id(session[:user_id])
+        return true
+      else
+        redirect_to sessions_login_path, notice: 'You must login before accessing this page.'
     end
   end
 end

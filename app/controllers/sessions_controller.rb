@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
       user = check_type(params[:email])
       type = user.class.to_s.downcase
       type_id = type + "_id"
+      session[:user_id] = user.id
       if user && user.authenticate(params[:password])
         session[type_id.to_sym] = user.id
         redirect_to get_path(type), notice: "Login complete"
@@ -15,10 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def logout
-    user = check_type(session[:email])
-    type = user.class.to_s.downcase
-    type_id = type + "_id"
-    session[type_id.to_sym] = nil
+    session[:user_id] = nil
     redirect_to sessions_login_path, notice: "Successfully logged out."
   end
 

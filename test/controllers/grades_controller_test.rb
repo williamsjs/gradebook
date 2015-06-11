@@ -19,7 +19,7 @@ class GradesControllerTest < ActionController::TestCase
 
   test "should create grade" do
     assert_difference('Grade.count') do
-      post :create, grade: { assignment: @grade.assignment, grade: @grade.grade, student_id: @grade.student_id }
+      post :create, grade: { assignment: @grade.assignment, value: @grade.value, student_id: @grade.student_id }
     end
 
     assert_redirected_to grade_path(assigns(:grade))
@@ -36,7 +36,7 @@ class GradesControllerTest < ActionController::TestCase
   end
 
   test "should update grade" do
-    patch :update, id: @grade, grade: { assignment: @grade.assignment, grade: @grade.grade, student_id: @grade.student_id }
+    patch :update, id: @grade, grade: { assignment: @grade.assignment, value: @grade.value, student_id: @grade.student_id }
     assert_redirected_to grade_path(assigns(:grade))
   end
 

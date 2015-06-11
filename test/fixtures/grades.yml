@@ -2,10 +2,10 @@
 
 one:
   assignment: MyString
-  grade: 1
-  student_id: 1
+  value: 1
+  student: :one
 
 two:
   assignment: MyString
-  grade: 1
-  student_id: 1
+  value: 1
+  student: :one
